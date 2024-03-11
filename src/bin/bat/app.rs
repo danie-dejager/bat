@@ -122,6 +122,10 @@ impl App {
         };
 
         let mut syntax_mapping = SyntaxMapping::new();
+        // start building glob matchers for builtin mappings immediately
+        // this is an appropriate approach because it's statistically likely that
+        // all the custom mappings need to be checked
+        syntax_mapping.start_offload_build_all();
 
         if let Some(values) = self.matches.get_many::<String>("ignored-suffix") {
             for suffix in values {
@@ -289,6 +293,17 @@ impl App {
             use_custom_assets: !self.matches.get_flag("no-custom-assets"),
             #[cfg(feature = "lessopen")]
             use_lessopen: self.matches.get_flag("lessopen"),
+            set_terminal_title: self.matches.get_flag("set-terminal-title"),
+            squeeze_lines: if self.matches.get_flag("squeeze-blank") {
+                Some(
+                    self.matches
+                        .get_one::<usize>("squeeze-limit")
+                        .map(|limit| limit.to_owned())
+                        .unwrap_or(1),
+                )
+            } else {
+                None
+            },
         })
     }
 
