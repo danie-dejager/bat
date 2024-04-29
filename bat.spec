@@ -1,6 +1,6 @@
 %define name bat
 %define version 0.24.0
-%define release 2%{?dist}
+%define release 3%{?dist}
 
 Summary:  A cat(1) clone with wings.
 Name:     %{name}
@@ -47,6 +47,8 @@ gzip %{buildroot}/usr/share/man/man1/%{name}.1
 
 %changelog
 * Wed Jan 31 2024 Danie de Jager - 0.24.0-%{release}
+- built using rustc 1.77.2
+* Wed Jan 31 2024 Danie de Jager - 0.24.0-2
 - Added man document.
 * Wed Jan 31 2024 Danie de Jager - 0.24.0-1
 - Initial RPM build
