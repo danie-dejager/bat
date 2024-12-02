@@ -11,6 +11,7 @@
 - Add or remove individual style components without replacing all styles #2929 (@eth-p)
 - Automatically choose theme based on the terminal's color scheme, see #2896 (@bash)
 - Add option `--binary=as-text` for printing binary content, see issue #2974 and PR #2976 (@einfachIrgendwer0815)
+- Make shell completions available via `--completion <shell>`, see issue #2057 and PR #3126 (@einfachIrgendwer0815)
 
 ## Bugfixes
 
@@ -68,6 +69,7 @@
 - Add syntax mapping for kubernetes config files #3049 (@cyqsimon)
 - Adds support for pipe delimiter for CSV #3115 (@pratik-m)
 - Add syntax mapping for `/etc/pacman.conf` #2961 (@cyqsimon)
+- Associate `uv.lock` with `TOML` syntax, see #3132 (@fepegar)
 
 ## Themes
 
@@ -82,6 +84,7 @@
 - Add `theme::theme` for choosing an appropriate theme based on the
   terminal's color scheme, see #2896 (@bash)
   - [BREAKING] Remove `HighlightingAssets::default_theme`. Use `theme::default_theme` instead.
+- Add `PrettyPrinter::print_with_writer` for custom output destinations, see #3070 (@kojix2)
 
 # v0.24.0
 
