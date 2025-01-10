@@ -2,6 +2,21 @@
 
 ## Features
 
+## Bugfixes
+* Fix `BAT_THEME_DARK` and `BAT_THEME_LIGHT` being ignored, see issue #3171 and PR #3168 (@bash)
+
+## Other
+
+## Syntaxes
+
+## Themes
+
+## `bat` as a library
+
+# v0.25.0
+
+## Features
+
 - Set terminal title to file names when Paging is not Paging::Never #2807 (@Oliver-Looney)
 - `bat --squeeze-blank`/`bat -s` will now squeeze consecutive empty lines, see #1441 (@eth-p) and #2665 (@einfachIrgendwer0815)
 - `bat --squeeze-limit` to set the maximum number of empty consecutive when using `--squeeze-blank`, see #1441 (@eth-p) and #2665 (@einfachIrgendwer0815)
@@ -23,6 +38,7 @@
 - Fix panel width when line 10000 wraps, see #2854 (@eth-p)
 - Fix compile issue of `time` dependency caused by standard library regression #3045 (@cyqsimon)
 - Fix override behavior of --plain and --paging, see issue #2731 and PR #3108 (@einfachIrgendwer0815)
+- Fix bugs in `$LESSOPEN` support, see #2805 (@Anomalocaridid)
 
 ## Other
 
@@ -51,6 +67,7 @@
 - Update options in shell completions and the man page of `bat`, see #2995 (@akinomyoga)
 - Update nix dev-dependency to v0.29.0, see #3112 (@decathorpe)
 - Bump MSRV to [1.74](https://blog.rust-lang.org/2023/11/16/Rust-1.74.0.html), see #3154 (@keith-hall)
+- Update clircle dependency to remove winapi transitive dependency, see #3113 (@niklasmohrin)
 
 ## Syntaxes
 
