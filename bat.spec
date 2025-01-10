@@ -36,8 +36,8 @@ mkdir -p %{buildroot}/usr/share/man/man1
 strip target/release/%{name}
 install -m 755 target/release/%{name} %{buildroot}/bin/
 install -m 755 assets/manual/%{name}.1.in %{buildroot}/usr/share/man/man1/%{name}.1
-sed -i 's/{{PROJECT_EXECUTABLE_UPPERCASE}}/CAT/g' %{buildroot}/usr/share/man/man1/%{name}.1
-sed -i 's/{{PROJECT_EXECUTABLE}}/cat/g' %{buildroot}/usr/share/man/man1/%{name}.1
+sed -i 's/{{PROJECT_EXECUTABLE_UPPERCASE}}/BAT/g' %{buildroot}/usr/share/man/man1/%{name}.1
+sed -i 's/{{PROJECT_EXECUTABLE}}/bat/g' %{buildroot}/usr/share/man/man1/%{name}.1
 gzip %{buildroot}/usr/share/man/man1/%{name}.1
 
 %files
