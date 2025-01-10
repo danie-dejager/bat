@@ -48,7 +48,7 @@ gzip %{buildroot}/usr/share/man/man1/%{name}.1
 %changelog
 * Fri Jan 10 2025 - Danie de Jager - 0.25.0-1
 - built using rustc 1.84.0
-* Thu Oct 24 2024 Danie de Jager - 0.24.0-2
+* Thu Oct 24 2024 Danie de Jager - 0.24.0-5
 - built using rustc 1.82.0
 * Wed Aug 7 2024 Danie de Jager - 0.24.0-4
 - built using rustc 1.80.0
