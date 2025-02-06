@@ -3,11 +3,20 @@
 ## Features
 
 ## Bugfixes
-* Fix `BAT_THEME_DARK` and `BAT_THEME_LIGHT` being ignored, see issue #3171 and PR #3168 (@bash)
+
+- Fix `BAT_THEME_DARK` and `BAT_THEME_LIGHT` being ignored, see issue #3171 and PR #3168 (@bash)
+- Prevent `--list-themes` from outputting default theme info to stdout when it is piped, see #3189 (@einfachIrgendwer0815)
+- Rename some submodules to fix Dependabot submodule updates, see issue #3198 and PR #3201 (@victor-gp)
 
 ## Other
 
+- Work around build failures when building `bat` from vendored sources #3179 (@dtolnay)
+
 ## Syntaxes
+
+- Add syntax mapping for `paru` configuration files #3182 (@cyqsimon)
+- Add support for [Idris 2 programming language](https://www.idris-lang.org/) #3150 (@buzden)
+- Add syntax mapping for `nix`'s '`flake.lock` lockfiles #3196 (@odilf)
 
 ## Themes
 

@@ -222,6 +222,12 @@ Note that the [Manpage syntax](assets/syntaxes/02_Extra/Manpage.sublime-syntax) 
 
 The [`prettybat`](https://github.com/eth-p/bat-extras/blob/master/doc/prettybat.md) script is a wrapper that will format code and print it with `bat`.
 
+#### `Warp`
+
+<a href="https://app.warp.dev/drive/folder/-Bat-Warp-Pack-lxhe7HrEwgwpG17mvrFSz1">
+  <img src="doc/sponsors/warp-pack-header.png" alt="Warp">
+</a>
+
 #### Highlighting `--help` messages
 
 You can use `bat` to colorize help text: `$ cp --help | bat -plhelp`
@@ -489,7 +495,7 @@ bat --list-themes | fzf --preview="bat --theme={} --color=always /path/to/file"
 ```
 
 `bat` automatically picks a fitting theme depending on your terminal's background color.
-You can use the `--theme-light` / `--theme-light` options or the `BAT_THEME_DARK` / `BAT_THEME_LIGHT` environment variables
+You can use the `--theme-dark` / `--theme-light` options or the `BAT_THEME_DARK` / `BAT_THEME_LIGHT` environment variables
 to customize the themes used. This is especially useful if you frequently switch between dark and light mode.
 
 You can also use a custom theme by following the
