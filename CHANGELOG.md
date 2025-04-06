@@ -2,11 +2,14 @@
 
 ## Features
 
+- Add paging to `--list-themes`, see PR #3239 (@einfachIrgendwer0815)
+
 ## Bugfixes
 
 - Fix `BAT_THEME_DARK` and `BAT_THEME_LIGHT` being ignored, see issue #3171 and PR #3168 (@bash)
 - Prevent `--list-themes` from outputting default theme info to stdout when it is piped, see #3189 (@einfachIrgendwer0815)
 - Rename some submodules to fix Dependabot submodule updates, see issue #3198 and PR #3201 (@victor-gp)
+- Make highlight tests fail when new syntaxes don't have fixtures PR #3255 (@dan-hipschman)
 
 ## Other
 
@@ -22,6 +25,7 @@
 - Map `ndjson` extension to JSON syntax, see #3209 (@keith-hall)
 - Map files with `csproj`, `vbproj`, `props` and `targets` extensions to XML syntax, see #3213 (@keith-hall)
 - Add debsources syntax to highlight `/etc/apt/sources.list` files, see #3215 (@keith-hall)
+- Add syntax test file for Odin highlighting, see #3241 (@chetanjangir0)
 
 ## Themes
 
