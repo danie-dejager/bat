@@ -354,6 +354,15 @@ fn list_themes_to_piped_output() {
 }
 
 #[test]
+fn list_languages() {
+    bat()
+        .arg("--list-languages")
+        .assert()
+        .success()
+        .stdout(predicate::str::contains("Rust").normalize());
+}
+
+#[test]
 #[cfg_attr(
     any(not(feature = "git"), feature = "lessopen", target_os = "windows"),
     ignore
@@ -448,6 +457,16 @@ fn stdin_to_stdout_cycle() -> io::Result<()> {
     drop(dir);
     res.failure();
     Ok(())
+}
+
+#[cfg(unix)]
+#[test]
+fn bat_error_to_stderr() {
+    bat()
+        .arg("/tmp")
+        .assert()
+        .failure()
+        .stderr(predicate::str::contains("[bat error]"));
 }
 
 #[cfg(unix)]
