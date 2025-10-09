@@ -6,6 +6,7 @@
 - Add paging to `--list-themes`, see PR #3239 (@einfachIrgendwer0815)
 - Support negative relative line ranges, e.g. `bat -r :-10` / `bat -r='-10:'`, see #3068 (@ajesipow)
 - Support context in line ranges, e.g. `bat -r 30::5` /  `bat -r 30:40:5`, see #3345 (@cavanaug)
+- Add built-in 'minus' pager, e.g. `bat --pager=builtin` see PR #3402 (@academician)
 
 ## Bugfixes
 
@@ -19,6 +20,9 @@
 - Send all bat errors to stderr by default, see #3336 (@JerryImMouse)
 - Make --map-syntax target case insensitive to match --language, see #3206 (@keith-hall)
 - Correctly determine the end of the line in UTF16LE/BE input #3369 (@keith-hall)
+- `--style=changes` no longer prints a two-space indent when the file is unmodified, see issue #2710 and PR #3406 (@jyn514)
+- Add missing shell completions, see #3411 (@keith-hall)
+- Execute help/version/diagnostic commands even with invalid config/arguments present, see #3414 (@keith-hall)
 
 ## Other
 
@@ -33,6 +37,7 @@
 - Update console dependency to 0.16, see #3351 (@musicinmybrain)
 - Fixed some typos #3244 (@ssbarnea)
 - Update onig_sys dependency to 69.9.1 to fix a gcc build failure #3400 (@CosmicHorrorDev)
+- Add a cargo feature (`vendored-libgit2`) to build with vendored libgit2 version without depending on the system's one #3426 (@0x61nas)
 
 ## Syntaxes
 
@@ -54,6 +59,9 @@
 - Update Lean syntax from Lean 3 to Lean 4 #3322 (@YDX-2147483647)
 - Map `.flatpakref` and `.flatpakrepo` files to INI syntax #3353 (@Ferenc-)
 - Update hosts syntax #3368 (@keith-hall)
+- Map `.kshrc` files to Bash syntax #3364 (@ritoban23)
+- Map `/var/log/dmesg` files to Syslog syntax #3412 (@keith-hall)
+- Add syntax definition and test file for Go modules(`go.mod` and `go.sum`) highlighting, see #3424 (@DarkMatter-999)
 
 ## Themes
 
@@ -61,6 +69,7 @@
 - Updated Catppuccin, see #3333 (@SchweGELBin)
 - Updated gruvbox, see #3372 (@Nicholas42)
 - Updated GitHub theme, see #3382 (@CosmicHorrorDev)
+- Updated ANSI theme to highlight JSON object keys differently from values, see #3413 (@keith-hall)
 
 ## `bat` as a library
 

@@ -635,9 +635,11 @@ syntax, use (this mapping is already built in):
 ### Using a different pager
 
 `bat` uses the pager that is specified in the `PAGER` environment variable. If this variable is not
-set, `less` is used by default. If you want to use a different pager, you can either modify the
-`PAGER` variable or set the `BAT_PAGER` environment variable to override what is specified in
-`PAGER`.
+set, `less` is used by default. You can also use bat's built-in pager with `--pager=builtin` or
+by setting the `BAT_PAGER` environment variable to "builtin".
+
+If you want to use a different pager, you can either modify the `PAGER` variable or set the
+`BAT_PAGER` environment variable to override what is specified in `PAGER`.
 
 >[!NOTE]
 > If `PAGER` is `more` or `most`, `bat` will silently use `less` instead to ensure support for colors.
@@ -920,7 +922,7 @@ There are a lot of alternatives, if you are looking for similar programs. See
 [this document](doc/alternatives.md) for a comparison.
 
 ## License
-Copyright (c) 2018-2023 [bat-developers](https://github.com/sharkdp/bat).
+Copyright (c) 2018-2025 [bat-developers](https://github.com/sharkdp/bat).
 
 `bat` is made available under the terms of either the MIT License or the Apache License 2.0, at your option.
 
