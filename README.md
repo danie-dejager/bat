@@ -258,7 +258,7 @@ abbr -a --position anywhere -- -h '-h | bat -plhelp'
 This way, you can keep on using `cp --help`, but get colorized help pages.
 
 Be aware that in some cases, `-h` may not be a shorthand of `--help` (for example with `ls`). In cases where you need to use `-h` 
-as a command argument you can prepend `\` to the arguement (eg. `ls \-h`) to escape the aliasing defined above. 
+as a command argument you can prepend `\` to the argument (eg. `ls \-h`) to escape the aliasing defined above. 
 
 Please report any issues with the help syntax in [this repository](https://github.com/victor-gp/cmd-help-sublime-syntax).
 
@@ -450,7 +450,7 @@ binaries are also available: look for archives with `musl` in the file name.
 
 ### From source
 
-If you want to build `bat` from source, you need Rust 1.74.0 or
+If you want to build `bat` from source, you need Rust 1.79.0 or
 higher. You can then use `cargo` to build everything:
 
 #### From local source
