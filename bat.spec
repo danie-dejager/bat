@@ -11,6 +11,7 @@ URL:      https://github.com/sharkdp/bat
 Source0:  https://github.com/sharkdp/bat/archive/refs/tags/v%{version}.tar.gz
 
 %define debug_package %{nil}
+%undefine _package_note_file
 
 BuildRequires: curl
 BuildRequires: gcc
