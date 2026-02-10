@@ -4,14 +4,20 @@
 
 ## Features
 
+- Added an initial `flake.nix` for a ready made development environment; see #3578 (@vorburger)
+- Add `--quiet-empty` (`-E`) flag to suppress output when input is empty. Closes #1936, see #3563 (@NORMAL-EX)
 - Improve native man pages and command help syntax highlighting by stripping overstriking, see #3517 (@akirk)
 
 ## Bugfixes
+- Fix crash with BusyBox `less` on Windows, see #3527 (@Anchal-T)
+- Fix `bat cache --help` failing with 'unexpected argument' error, see #3580 and #3560 (@NORMAL-EX)
 - `--help` now correctly honors `--pager=builtin`. See #3516 (@keith-hall)
 - `--help` now correctly honors custom themes. See #3524 (@keith-hall)
 - Fixed test compatibility with future Cargo build directory changes, see #3550 (@nmacl)
 
 ## Other
+
+- Bump MSRV to 1.88, update `time` crate to 0.3.47 to fix RUSTSEC-2026-0009, see #3581 (@NORMAL-EX)
 
 ## Syntaxes
 
@@ -19,6 +25,8 @@
 - Don't color strings inside CSV files, to make it easier to tell which column they belong to, see #3521 (@keith-hall)
 
 ## Themes
+
+- Remove the Visual Studio Dark+ theme, see #3552 (@CosmicHorrorDev)
 
 ## `bat` as a library
 
