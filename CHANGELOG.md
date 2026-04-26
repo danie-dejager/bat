@@ -42,9 +42,11 @@
 - Bump MSRV to 1.88, update `time` crate to 0.3.47 to fix RUSTSEC-2026-0009, see #3581 (@NORMAL-EX)
 - Allow home and end keys to be used with builtin pager, see #3651 (@keith-hall)
 - Builtin syntax mapping: cleanup matcher glob parsing logic #3652 (@cyqsimon)
+- Statically link the CRT for MSVC builds via Cargo config to avoid runtime DLL dependencies. Closes #3634, see #3692 (@barry3406)
 
 ## Syntaxes
 
+- Add shebang-based detection for Tcl (`tclsh`, `wish`) and Expect (`expect`) scripts, see #3647 (@mvanhorn)
 - Change the URL of Zig submodule from GitHub to Codeberg, see #3519 (@sorairolake)
 - Don't color strings inside CSV files, to make it easier to tell which column they belong to, see #3521 (@keith-hall)
 - Add syntax highlighting support for COBOL, see #3584 (@adukhan99)
