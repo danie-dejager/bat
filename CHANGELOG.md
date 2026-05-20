@@ -22,6 +22,7 @@
 - Syntax highlighting for Python files using uv as script runner in shebang #3689 (@janlarres)
 
 ## Bugfixes
+- Pass `--no-paging` to `bat` invocations inside the bash / zsh / fish / PowerShell shell completion scripts so that shell-level pager wiring (e.g. `LESSOPEN='|-bat -f -pp %s'`) cannot inject ANSI escape sequences into the completion candidates. Closes #3760 (@mvanhorn)
 - Quote filenames before substituting them into `$LESSOPEN` / `$LESSCLOSE` templates, preventing shell injection when a filename contains shell metacharacters, see #3726 (@curious-rabbit)
 - Fix `--list-themes` unconditionally probing the terminal via OSC 10/11 even when `--theme` was set to an explicit value, see #3700 (regression introduced in bc42149a). (@optimistiCli)
 - Fix inverted `$LESSCLOSE` warning so bat warns on nonzero exit, not on success. See #3654 (@cuiweixie)
@@ -62,6 +63,8 @@
 - Map several Google Cloud CLI config files to their appropriate syntax #3635 (@victor-gp)
 - Map all ignore dotfiles to Git Ignore syntax #3636 (@victor-gp)
 - Improved Kotlin syntax, see #3699 (@guille)
+- Include subdirectories in SSH Config syntax mapping, see #3758 (@injust)
+- Add Ghostty syntax mapping, see #3759 (@injust)
 
 ## Themes
 
