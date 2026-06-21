@@ -1,6 +1,6 @@
 %define name bat
 %define version 0.26.1
-%define release 2%{?dist}
+%define release 3%{?dist}
 
 Summary:  A cat(1) clone with wings.
 Name:     %{name}
@@ -47,6 +47,7 @@ gzip %{buildroot}/usr/share/man/man1/%{name}.1
 /usr/share/man/man1/%{name}.1.gz
 
 %changelog
+* Sun Jun 21 2026 - Danie de Jager - 0.26.1-3 
 * Wed Apr 29 2026 - Danie de Jager - 0.26.1-2
 * Tue Jan 13 2026 - Danie de Jager - 0.26.1-1
 * Sun Oct 26 2025 - Danie de Jager - 0.26.0-1
