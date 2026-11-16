@@ -65,12 +65,20 @@ pub struct App {
     number_nonblank_from_cli: bool,
 }
 
+/// True if stdout is attached to an interactive terminal. On Windows this also
+/// recognizes mintty/MSYS2 and Cygwin pseudo-terminals, which expose stdout as
+/// a named pipe that `std::io::IsTerminal` does not report as a terminal.
+/// Regular pipes (e.g. `bat file | grep`) are not affected.
+fn is_interactive_output() -> bool {
+    std::io::stdout().is_terminal() || Term::stdout().features().is_msys_tty()
+}
+
 impl App {
     pub fn new() -> Result<Self> {
         #[cfg(windows)]
         let _ = nu_ansi_term::enable_ansi_support();
 
-        let interactive_output = std::io::stdout().is_terminal();
+        let interactive_output = is_interactive_output();
 
         // Parse the original command line separately from config and environment arguments.
         // Using clap here keeps CLI-only detection consistent with the final parser, including
@@ -328,13 +336,12 @@ impl App {
             // later args take precedence over earlier ones, hence `.rev()`
             // see: https://github.com/sharkdp/bat/pull/2755#discussion_r1456416875
             for from_to in values.rev() {
-                let parts: Vec<_> = from_to.split(':').collect();
-
-                if parts.len() != 2 {
+                // The glob can contain colons itself, e.g. after a drive letter on Windows.
+                let Some((from, to)) = from_to.rsplit_once(':') else {
                     return Err("Invalid syntax mapping. The format of the -m/--map-syntax option is '<glob-pattern>:<syntax-name>'. For example: '*.cpp:C++'.".into());
-                }
+                };
 
-                syntax_mapping.insert(parts[0], MappingTarget::MapTo(parts[1]))?;
+                syntax_mapping.insert(from, MappingTarget::MapTo(to))?;
             }
         }
 
@@ -447,26 +454,12 @@ impl App {
                         4
                     },
                 ),
-            strip_ansi: {
-                let sanitize = parse_strip_ansi_value(
-                    self.matches
-                        .get_one::<String>("sanitize")
-                        .map(|s| s.as_str()),
-                    "--sanitize",
-                );
-                let strip_ansi = parse_strip_ansi_value(
-                    self.matches
-                        .get_one::<String>("strip-ansi")
-                        .map(|s| s.as_str()),
-                    "--strip-ansi",
-                );
-                // --sanitize implies --strip-ansi to the same value.
-                if sanitize != StripAnsiMode::Never {
-                    sanitize
-                } else {
-                    strip_ansi
-                }
-            },
+            strip_ansi: parse_strip_ansi_value(
+                self.matches
+                    .get_one::<String>("strip-ansi")
+                    .map(|s| s.as_str()),
+                "--strip-ansi",
+            ),
             sanitize: parse_strip_ansi_value(
                 self.matches
                     .get_one::<String>("sanitize")
